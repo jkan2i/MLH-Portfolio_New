@@ -45,6 +45,10 @@ def submit():
         message_form = "Form not submitted. Try again!"
         return render_template('submission.html', message=message_form)
 
+@app.route('/health', methods=['GET'])
+def health_endpoint():
+    return '200 OK'
+
 @app.route('/<string:page_name>')
 def page_direct(page_name='/'):
     try:
